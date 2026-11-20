@@ -1,0 +1,22 @@
+//Challenge 3 Chapter 25
+// The constructor: creates a new vector "object" from x/y coordinates.
+fun vector(x, y) {
+  fun object(message) {
+    fun add(other) {
+      return vector(x + other("x"), y + other("y"));
+    }
+
+    if (message == "x") return x;
+    if (message == "y") return y;
+
+    if (message == "add") return add;
+    print "unknown message";
+  }
+
+  return object;
+}
+var a = vector(1, 2);
+var b = vector(3, 4);
+var c = a("add")(b);
+print c("x");
+print c("y");
